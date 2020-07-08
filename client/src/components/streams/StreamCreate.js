@@ -2,20 +2,23 @@ import React from "react";
 import { Field, reduxForm } from "redux-form";
 
 class StreamCreate extends React.Component {
-  renderError({ error, touched }) {
-    if (touched && error) {
+  checkError({ error, touched }) {
+    return touched && error;
+  }
+
+  renderError(meta) {
+    if (this.checkError(meta)) {
       return (
         <div className="ui error message">
-          <div className="header">{error}</div>
+          <div className="header">{meta.error}</div>
         </div>
       );
     }
   }
-
   // Take the input from formProps passes as an argument
   // Take all values of formProps.input and assign it to our input JSX tag
   renderInput = ({ input, label, meta }) => {
-    const className = `field ${meta.error && meta.touched ? 'error' : ''}`
+    const className = `field ${this.checkError(meta) ? "error" : ""}`;
     return (
       <div className={className}>
         <label>{label}</label>
