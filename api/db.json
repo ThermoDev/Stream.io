@@ -4,6 +4,16 @@
       "title": "Title",
       "description": "Desc",
       "id": 1
+    },
+    {
+      "title": "My Stream",
+      "description": "Nice Stream!",
+      "id": 2
+    },
+    {
+      "title": "Second Stream",
+      "description": "Another one!",
+      "id": 3
     }
   ]
 }
