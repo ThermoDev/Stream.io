@@ -1,4 +1,4 @@
-import streams from "../apis/streams";
+import streams from '../apis/streams';
 import {
   SIGN_IN,
   SIGN_OUT,
@@ -7,7 +7,7 @@ import {
   FETCH_STREAM,
   EDIT_STREAM,
   DELETE_STREAM,
-} from "./types";
+} from './types';
 
 export const signIn = (userId) => {
   return {
@@ -24,13 +24,14 @@ export const signOut = () => {
 
 // Action Creators using RESTful conventions for streams.
 
-export const createStream = (formValues) => async (dispatch) => {
-  const response = await streams.post("/streams", formValues);
+export const createStream = (formValues) => async (dispatch, getState) => {
+  const { userId } = getState().auth;
+  const response = await streams.post('/streams', { ...formValues, userId });
   dispatch({ type: CREATE_STREAM, payload: response.data });
 };
 
 export const fetchStreams = () => async (dispatch) => {
-  const response = await streams.get("/streams");
+  const response = await streams.get('/streams');
   dispatch({ type: FETCH_STREAMS, payload: response.data });
 };
 
