@@ -29,7 +29,7 @@ class StreamEdit extends React.Component {
     return (
       <div>
         <h3>Edit a Stream</h3>
-        {/*  Use Redux-Form's intialValues property to set up the initial values. */}
+        {/*  Use Redux-Form's initialValues property to set up the initial values. */}
         {/* This props stream object has title and description property, which are updated in streamForm Field name property */}
         <StreamForm
           initialValues={_.pick(this.props.stream, 'title', 'description')}
@@ -40,7 +40,7 @@ class StreamEdit extends React.Component {
   }
 }
 
-// Use the two values and receieve ths stream using it's own props value
+// Use the two values and receive ths stream using it's own props value
 const mapStateToProps = (state, ownProps) => {
   return { stream: state.streams[ownProps.match.params.id] };
 };
