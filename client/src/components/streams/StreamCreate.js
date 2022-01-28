@@ -10,7 +10,7 @@ class StreamCreate extends React.Component {
   };
 
   // The render function to render the form.
-  render() { 
+  render() {
     return (
       <div>
         <h3>Create a Stream</h3>
