@@ -14,12 +14,6 @@
       "title": "Second Stream",
       "description": "Another one!",
       "id": 3
-    },
-    {
-      "title": "I Created This Stream",
-      "description": "This stream is about refactoring",
-      "userId": "103365217043782653773",
-      "id": 4
     }
   ]
 }
